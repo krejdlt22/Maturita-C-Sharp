@@ -1,4 +1,5 @@
 using Maturita_C_.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
