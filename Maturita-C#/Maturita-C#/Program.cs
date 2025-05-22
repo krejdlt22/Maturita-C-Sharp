@@ -1,9 +1,14 @@
+using Maturita_C_.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=users.db")); // Používáme SQLite pro jednoduchost
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
