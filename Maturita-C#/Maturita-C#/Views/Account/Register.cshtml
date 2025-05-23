@@ -1,0 +1,26 @@
+﻿@model Maturita_C_.Models.User
+
+<h2>Registrace</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>Uživatelské jméno:</label>
+        <input asp-for="Username" required />
+    </div>
+    <div>
+        <label>Heslo:</label>
+        <input asp-for="Password" type="password" required />
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="Consent" value="true" required />
+            Souhlasím, že AI může využívat moje data pro trénink
+        </label>
+    </div>
+    <button type="submit">Registrovat</button>
+</form>
+
+@foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+{
+    <div style="color: red">@err.ErrorMessage</div>
+}

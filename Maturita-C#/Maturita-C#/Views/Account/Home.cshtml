@@ -1,0 +1,12 @@
+﻿@{
+    var username = Context.Session.GetString("Username");
+}
+
+@if (!string.IsNullOrEmpty(username))
+{
+    <h2>Vítej, @username!</h2>
+}
+else
+{
+    <h2>Vítej, návštěvníku!</h2>
+}

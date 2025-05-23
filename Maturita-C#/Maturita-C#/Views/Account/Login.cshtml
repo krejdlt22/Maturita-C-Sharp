@@ -1,0 +1,18 @@
+﻿<h2>Přihlášení</h2>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label>Uživatelské jméno:</label>
+        <input name="username" required />
+    </div>
+    <div>
+        <label>Heslo:</label>
+        <input name="password" type="password" required />
+    </div>
+    <button type="submit">Přihlásit</button>
+</form>
+
+@foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+{
+    <div style="color: red">@err.ErrorMessage</div>
+}
