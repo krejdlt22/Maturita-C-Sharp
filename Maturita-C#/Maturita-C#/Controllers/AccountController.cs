@@ -72,10 +72,10 @@ namespace Maturita_C_.Controllers
             }
 
             HttpContext.Session.SetString("Username", user.Username);
-            return RedirectToAction("Welcome");
+            return RedirectToAction("Home");
         }
 
-        public IActionResult Welcome()
+        public IActionResult Home()
         {
             var username = HttpContext.Session.GetString("Username");
             if (username == null) return RedirectToAction("Login");

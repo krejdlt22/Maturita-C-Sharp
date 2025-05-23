@@ -8,10 +8,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSession();
 
-var app = builder.Build();
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=users.db")); // Používáme SQLite pro jednoduchost
+
+var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

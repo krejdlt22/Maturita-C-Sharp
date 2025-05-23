@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Maturita_C_.Models
 {
@@ -14,5 +15,10 @@ namespace Maturita_C_.Models
 
         [Required]
         public bool ConsentGiven { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = "Heslo je povinné")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }
